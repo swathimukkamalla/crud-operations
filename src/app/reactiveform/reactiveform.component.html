@@ -1,0 +1,337 @@
+<div class="container mt-4 mb-4 justify-content-center"style="border:2px solid blue">
+    <p><b>Personal Infermation</b></p>
+    <form [formGroup]="regform">
+        <div class="row">
+            <div class="col-lg-4">
+    First Name:
+            </div>
+            <div class="col-lg-8">
+                    <input type="text" name="fname" 
+                    formControlName="fname" class="form-control" minlength="4" maxlength="10"
+                      required
+      [ngClass]="{'is-invalid':regform.controls.fname.errors 
+      && regform.controls.fname.touched}">
+                    <div class="col-md-12">
+            
+      <div *ngIf="regform.controls.fname.errors && regform.controls.fname.touched" class="text-danger ">
+      <p *ngIf="regform.controls.fname.errors?.required">This Field is Required</p>
+      <p *ngIf="regform.controls.fname.errors?.minlength">Please enter a min 6 characters</p>
+      <p *ngIf="regform.controls.fname.errors?.maxlength">Please enter a max 10 characters</p>
+      </div>
+                    </div>
+            </div>
+        </div>
+        <br>
+    
+        <div class="row">
+            <div class="col-lg-4">
+    Last Name:
+            </div>
+            <div class="col-lg-8">
+                    <input type="text" name="lname" 
+                    formControlName="lname" class="form-control" minlength="4" maxlength="10"
+                      required
+      [ngClass]="{'is-invalid':regform.controls.lname.errors 
+      && regform.controls.lname.touched}">
+                    <div class="col-md-12">
+            
+      <div *ngIf="regform.controls.lname.errors && regform.controls.lname.touched" class="text-danger ">
+      <p *ngIf="regform.controls.lname.errors?.required">This Field is Required</p>
+      <p *ngIf="regform.controls.lname.errors?.minlength">Please enter a min 6 characters</p>
+      <p *ngIf="regform.controls.lname.errors?.maxlength">Please enter a max 10 characters</p>
+      </div>
+                    </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+                <div class="col-lg-4">
+        Email:
+                </div>
+                <div class="col-lg-8">
+                        <input type="text" name="email" 
+                        formControlName="email" class="form-control" minlength="10" maxlength="15"
+                          required
+          [ngClass]="{'is-invalid':regform.controls.email.errors 
+          && regform.controls.email.touched}">
+                        <div class="col-md-12">
+                
+          <div *ngIf="regform.controls.email.errors && regform.controls.email.touched" class="text-danger ">
+          <p *ngIf="regform.controls.email.errors?.required">This Field is Required</p>
+          <p *ngIf="regform.controls.email.errors?.minlength">Please enter a min 6 characters</p>
+          <p *ngIf="regform.controls.email.errors?.maxlength">Please enter a max 10 characters</p>
+          </div>
+                        </div>
+                </div>
+            </div>
+            <br>
+        <div class="row">
+            <div class="col-lg-4">
+    Date Of Birth:
+            </div>
+            <div class="col-lg-3">
+                    <input type="date" name="dateofBirth" 
+                    formControlName="dateofBirth" class="form-control" minlength="4" maxlength="10"
+                      required
+      [ngClass]="{'is-invalid':regform.controls.dateofBirth.errors 
+      && regform.controls.dateofBirth.touched}">
+                    <div class="col-md-12">
+            
+      <div *ngIf="regform.controls.dateofBirth.errors && regform.controls.dateofBirth.touched" class="text-danger ">
+      <p *ngIf="regform.controls.dateofBirth.errors?.required">This Field is Required</p>
+
+      </div>
+                    </div>
+            </div>
+            <div class="col-lg-2 right">
+        
+                  
+                </div>
+            <div class="col-lg-3">
+                   <input type="number" name="age" 
+                    formControlName="age" class="form-control"
+                      required 
+      [ngClass]="{'is-invalid':regform.controls.age.errors 
+      && regform.controls.age.touched}">
+                    <div class="col-md-12">
+            
+      <div *ngIf="regform.controls.age.errors && regform.controls.age.touched" class="text-danger ">
+      <p *ngIf="regform.controls.age.errors?.required">This Field is Required</p>
+
+      </div>
+                    </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+                <div class="col-lg-4">
+        Gender:
+                </div>
+                <div class="col-lg-8">
+                       <input type="radio" name="gender"formControlName="gender">Male
+                       <input type="radio" name="gender"formControlName="gender">Female
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                    <div class="col-lg-4">
+            Occupation
+                    </div>
+                    <div class="col-lg-8">
+                            <input type="text" name="occupation" 
+                            formControlName="occupation" class="form-control" minlength="4" maxlength="10"
+                              required
+              [ngClass]="{'is-invalid':regform.controls.occupation.errors 
+              && regform.controls.occupation.touched}">
+                            <div class="col-md-12">
+                    
+              <div *ngIf="regform.controls.occupation.errors && regform.controls.occupation.touched" class="text-danger ">
+              <p *ngIf="regform.controls.occupation.errors?.required">This Field is Required</p>
+              <p *ngIf="regform.controls.occupation.errors?.minlength">Please enter a min 6 characters</p>
+              <p *ngIf="regform.controls.occupation.errors?.maxlength">Please enter a max 10 characters</p>
+              </div>
+                            </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                        <div class="col-lg-4">
+                MaritalStatus:
+                        </div>
+                        <div class="col-lg-8">
+                                <input type="radio" name="married" formControlName="married"required> Married 
+                                <input type="radio" name="unmarried" formControlName="unmarried"required> Single
+                                <input type="radio" name="other" formControlName="other"required> Other
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                            <div class="col-lg-4">
+                    Teliphone Number 1:
+                            </div>
+                            <div class="col-lg-8">
+                                    <input type="text" name="tNum1" 
+                                    formControlName="tNum1" class="form-control" minlength="10" maxlength="10"
+                                      required
+                      [ngClass]="{'is-invalid':regform.controls.tNum1.errors 
+                      && regform.controls.tNum1.touched}">
+                                    <div class="col-md-12">
+                            
+                      <div *ngIf="regform.controls.tNum1.errors && regform.controls.tNum1.touched" class="text-danger ">
+                      <p *ngIf="regform.controls.tNum1.errors?.required">This Field is Required</p>
+                      <p *ngIf="regform.controls.tNum1.errors?.minlength">Please enter a min 10 characters</p>
+                      <p *ngIf="regform.controls.tNum1.errors?.maxlength">Please enter a max 10 characters</p>
+                      </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                                <div class="col-lg-4">
+                        Telephone Number 2:
+                                </div>
+                                <div class="col-lg-8">
+                                        <input type="text" name="tNum2" 
+                                        formControlName="tNum2" class="form-control" minlength="10" maxlength="10"
+                                          required
+                          [ngClass]="{'is-invalid':regform.controls.tNum2.errors 
+                          && regform.controls.tNum2.touched}">
+                                        <div class="col-md-12">
+                                
+                          <div *ngIf="regform.controls.tNum2.errors && regform.controls.tNum2.touched" class="text-danger ">
+                          <p *ngIf="regform.controls.tNum2.errors?.required">This Field is Required</p>
+                          <p *ngIf="regform.controls.tNum2.errors?.minlength">Please enter a min 10 characters</p>
+                          <p *ngIf="regform.controls.tNum2.errors?.maxlength">Please enter a max 10 characters</p>
+                          </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                    <div class="col-lg-4">
+                            Address:
+                                    </div>
+                                    <div class="col-lg-8">
+                                            <input type="text" name="address" 
+                                            formControlName="address" class="form-control" minlength="20" maxlength="100"
+                                              required
+                              [ngClass]="{'is-invalid':regform.controls.address.errors 
+                              && regform.controls.address.touched}">
+                                            <div class="col-md-12">
+                                    
+                              <div *ngIf="regform.controls.address.errors && regform.controls.address.touched" class="text-danger ">
+                              <p *ngIf="regform.controls.address.errors?.required">This Field is Required</p>
+                              <p *ngIf="regform.controls.address.errors?.minlength">Please enter a min 20 characters</p>
+                              <p *ngIf="regform.controls.address.errors?.maxlength">Please enter a max 100 characters</p>
+                              </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                        <div class="col-lg-4">
+                                Pincode
+                                        </div>
+                                        <div class="col-lg-8">
+                                                <input type="text" name="pincode" 
+                                                formControlName="pincode" class="form-control" minlength="6" maxlength="6"
+                                                  required
+                                  [ngClass]="{'is-invalid':regform.controls.pincode.errors 
+                                  && regform.controls.pincode.touched}">
+                                                <div class="col-md-12">
+                                        
+                                  <div *ngIf="regform.controls.pincode.errors && regform.controls.pincode.touched" class="text-danger ">
+                                  <p *ngIf="regform.controls.pincode.errors?.required">This Field is Required</p>
+                                  <p *ngIf="regform.controls.pincode.errors?.minlength">Please enter a min 6 characters</p>
+                                  <p *ngIf="regform.controls.pincode.errors?.maxlength">Please enter a max 6 characters</p>
+                                  </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                            <div class="col-lg-4">
+                                    Country:
+                                            </div>
+                                            <div class="col-lg-8">
+                                                    <select class="form-control"name="country" formControlName="country" required
+                                                    [ngClass]="{'is-invalid':regform.controls.country.errors 
+                                                            && regform.controls.country.touched}">
+                                                            <option [ngValue]=""> Plese Select Country Name</option>
+                                                    <!-- <option *ngFor="let state of states">{{state}}</option> -->
+                                                    <!-- <option *ngFor="let c of country">{{c}}</option> -->
+                                                    <option>India</option>
+                                                    <option>Luknow</option>
+                                                    <option>Malysia</option>
+                                                    <option>USA</option>
+                                                     
+                                                </select>
+                                                <div class="text-danger"style="height:auto" *ngIf="regform.controls.country.errors && regform.controls.country.touched">
+                                                        <p *ngIf="regform.controls.country.errors?.required">This Field is Required</p></div>         
+                        
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                                <div class="col-lg-4">
+                                        State:
+                                                </div>
+                                                <div class="col-lg-8">
+                                                        <select class="form-control"name="state" formControlName="state" required   
+                                                        [ngClass]="{'is-invalid':regform.controls.state.errors 
+                                                        && regform.controls.state.touched}">
+                                                                <option [ngValue]=""> Plese Select State Name</option>
+                                                        <!-- <option *ngFor="let state of states">{{state}}</option> -->
+                                                        <option>AP</option>
+                                                        <option>TS</option>
+                                                        <option>TN</option>
+                                                        <option>MH</option>
+                                                        <option>RS</option>
+                                                        <option>KA</option>
+                                                        <option>KERALA</option>
+                                                        <option>UP</option>
+                                                    </select>
+                                                    <div class="text-danger"style="height:auto" *ngIf="regform.controls.state.errors && regform.controls.state.touched">
+                                                            <p *ngIf="regform.controls.state.errors?.required">This Field is Required</p></div>
+                                          
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                    <div class="col-lg-4">
+                                            City:
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                            <select class="form-control"name="city" formControlName="city" required
+                                                            [ngClass]="{'is-invalid':regform.controls.city.errors 
+                                                            && regform.controls.city.touched}">
+                                                                    <option [ngValue]=""> Plese Select City Name</option>
+                                                            <option>abc</option>
+                                                            <option>xyz</option>
+                                                            <option>mno</option>
+                                                            <option>123</option>
+                                                            <option>963</option>
+                                                        </select>
+                                                        <div class="text-danger"style="height:auto" *ngIf="regform.controls.city.errors && regform.controls.city.touched">
+                                                                <p *ngIf="regform.controls.city.errors?.required">This Field is Required</p></div>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                        <div class="col-lg-4">
+                                                Reffered By:
+                                                        </div>
+                                                        <div class="col-lg-8">
+                                                                <input type="text" name="reffered" 
+                                                                formControlName="reffered" class="form-control" minlength="10" maxlength="20"
+                                                                  required
+                                                  [ngClass]="{'is-invalid':regform.controls.reffered.errors 
+                                                  && regform.controls.reffered.touched}">
+                                                                <div class="col-md-12">
+                                                        
+                                                  <div *ngIf="regform.controls.reffered.errors && regform.controls.reffered.touched" class="text-danger ">
+                                                  <p *ngIf="regform.controls.reffered.errors?.required">This Field is Required</p>
+                                                  <p *ngIf="regform.controls.reffered.errors?.minlength">Please enter a min 10 characters</p>
+                                                  <p *ngIf="regform.controls.reffered.errors?.maxlength">Please enter a max 20 characters</p>
+                                                  </div>
+                                                                </div>
+                                                        </div>                                                    </div>
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <button type="submit"class="btn btn-success"(click)="oncreate(regform.value)"> Save</button>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <button type="submit"class="btn btn-danger"> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    {{regform.value|json}}
+                                                    <br>
+   <br>
+                                 <button class="btn btn-info" (click)="updateData(regform.value)">Update</button> 
+    </form>
+</div>
